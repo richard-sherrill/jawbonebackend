@@ -2,6 +2,7 @@ package com.jawbonepottery.jawbonebackend.models;
 
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Model class representing a Market/Event.
@@ -14,13 +15,15 @@ public class Market {
     private Date endDate;
     private BigDecimal cost;
     private String description;
+    private List<Expense> expenses;
 
-    public Market(final String name, final Date startDate, final Date endDate, final BigDecimal cost, final String description) {
+    public Market(final String name, final Date startDate, final Date endDate, final BigDecimal cost, final String description, final  List<Expense> expenses) {
         this.name = name;
         this.startDate = startDate;
         this.endDate = endDate;
         this.cost = cost;
         this.description = description;
+        this.expenses = expenses;
     }
 
     public Long getId() {
@@ -69,5 +72,13 @@ public class Market {
 
     public void setDescription(final String description) {
         this.description = description;
+    }
+
+    public List<Expense> getExpenses() {
+        return expenses;
+    }
+
+    public void setExpenses(final List<Expense> expenses) {
+        this.expenses = expenses;
     }
 }
