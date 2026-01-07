@@ -1,6 +1,8 @@
 package com.jawbonepottery.jawbonebackend.controllers;
 
 import com.jawbonepottery.jawbonebackend.models.Market;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -12,34 +14,29 @@ import java.util.List;
 @RequestMapping("/markets")
 public class MarketController {
 
-    @PostMapping("/create")
-    public String createMarket(@RequestBody final Market market) {
-        // Logic to save the market would go here
-        return "Market created!";
+    @PostMapping
+    public ResponseEntity<Market> createEntity(@RequestBody Market entity) {
+        return ResponseEntity.status(HttpStatus.NOT_IMPLEMENTED).build();
     }
 
-    @PutMapping("/update")
-    public String updateMarket(@RequestBody final Market market) {
-        // Logic to update the market would go here
-        return "Market updated!";
+    @GetMapping
+    public ResponseEntity<List<Market>> getAllEntities() {
+        return ResponseEntity.status(HttpStatus.NOT_IMPLEMENTED).build();
     }
 
-    @DeleteMapping("/delete/{id}")
-    public String deleteMarket(@PathVariable final Long id) {
-        // Logic to delete the market would go here
-        return "Market deleted!";
+    @GetMapping("/{id}")
+    public ResponseEntity<Market> getEntity(@PathVariable Long id) {
+        return ResponseEntity.status(HttpStatus.NOT_IMPLEMENTED).build();
     }
 
-    @GetMapping("/get/{id}")
-    public Market getMarket(@PathVariable final Long id) {
-        // Logic to retrieve the market would go here
-        return new Market("Sample Market", null, null, null, "This is a sample market", null);
+    @PutMapping("/{id}")
+    public ResponseEntity<Market> updateEntity(@PathVariable Long id, @RequestBody Market entity) {
+        return ResponseEntity.status(HttpStatus.NOT_IMPLEMENTED).build();
     }
 
-    @GetMapping("/all")
-    public List<Market> getAllMarkets() {
-        // Logic to retrieve all markets would go here
-        return List.of();
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteEntity(@PathVariable Long id) {
+        return ResponseEntity.status(HttpStatus.NOT_IMPLEMENTED).build();
     }
 
 }
